@@ -1,4 +1,6 @@
+import json
 import requests # Import the requests library to handle HTTP requests
+ 
 
 # Define a function named sentiment_analyzer that takes a string input (text_to_analyse) 
 def sentiment_analyzer(text_to_analyse): 
@@ -14,7 +16,15 @@ def sentiment_analyzer(text_to_analyse):
     # Send a POST request to the API with the text and headers
     response = requests.post(url, json = myobj, headers=header) 
     
+    # Parsing the JSON response from the API 
+    formatted_response = json.loads(response.text)
+    
+    # Extracting sentiment label and score from the response
+    label = formatted_response['documentSentiment']['label']
+    score = formatted_response['documentSentiment']['score']
+
+
     # Return the response text from the API
-    return response.text 
+    return {'label': label, 'score': score} 
     
-    
+    git 
