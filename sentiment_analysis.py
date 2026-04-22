@@ -1,4 +1,4 @@
- import requests # Import the requests library to handle HTTP requests
+import requests # Import the requests library to handle HTTP requests
 
 # Define a function named sentiment_analyzer that takes a string input (text_to_analyse) 
 def sentiment_analyzer(text_to_analyse): 
