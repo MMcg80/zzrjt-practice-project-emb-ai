@@ -27,4 +27,3 @@ def sentiment_analyzer(text_to_analyse):
     # Return the response text from the API
     return {'label': label, 'score': score} 
     
-    git 
